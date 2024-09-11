@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/titleFragment">
+    <activity
+        android:id="@+id/mainActivity2"
+        android:name="com.example.trivia039.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <fragment
+        android:id="@+id/titleFragment"
+        android:name="com.example.trivia039.TitleFragment"
+        android:label="fragment_title"
+        tools:layout="@layout/fragment_title" >
+        <action
+            android:id="@+id/action_titleFragment_to_logoTriviaFragment"
+            app:destination="@id/logoTriviaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/logoTriviaFragment"
+        android:name="com.example.trivia039.LogoTriviaFragment"
+        android:label="fragment_logo_trivia"
+        tools:layout="@layout/fragment_logo_trivia" >
+        <action
+            android:id="@+id/action_logoTriviaFragment_to_winFragment"
+            app:destination="@id/winFragment" />
+        <action
+            android:id="@+id/action_logoTriviaFragment_to_tryAgainFragment"
+            app:destination="@id/tryAgainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/winFragment"
+        android:name="com.example.trivia039.WinFragment"
+        android:label="fragment_win"
+        tools:layout="@layout/fragment_win" >
+        <action
+            android:id="@+id/action_winFragment_to_logoTriviaFragment"
+            app:destination="@id/logoTriviaFragment" />
+        <action
+            android:id="@+id/action_winFragment_to_mainActivity2"
+            app:destination="@id/mainActivity2" />
+    </fragment>
+    <fragment
+        android:id="@+id/tryAgainFragment"
+        android:name="com.example.trivia039.TryAgainFragment"
+        android:label="fragment_try_again"
+        tools:layout="@layout/fragment_try_again" >
+        <action
+            android:id="@+id/action_tryAgainFragment_to_logoTriviaFragment"
+            app:destination="@id/logoTriviaFragment" />
+    </fragment>
+</navigation>
